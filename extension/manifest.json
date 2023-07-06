@@ -1,0 +1,14 @@
+{
+  "name": "Linkbolt",
+  "manifest_version": 3,
+  "version": "0.0.1",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "icons": {
+    "16": "src/assets/icons/icon-48.png",
+    "32": "src/assets/icons/icon-48.png",
+    "48": "src/assets/icons/icon-48.png",
+    "128": "src/assets/icons/icon-48.png"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "printWidth": 80,
+  "useTabs": false,
+  "bracketSameLine": false,
+  "arrowParens": "always",
+  "tabWidth": 2
+}
