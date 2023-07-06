@@ -1,11 +1,28 @@
+import ContainerLayout from "../../layout/containerLayout";
+import Button from "../components/atoms/button";
+import Logo from "../components/atoms/logo";
+import { Link } from "react-chrome-extension-router";
+import Onboard from "./onboard";
+import Index from "./index";
 const Home = () => {
   return (
-    <>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-      consequuntur esse magnam ut, quisquam reprehenderit aspernatur inventore
-      nisi voluptatum iste non, dolor exercitationem quidem debitis natus, earum
-      corporis mollitia ducimus?
-    </>
+    <ContainerLayout>
+      <div className="my-3">
+        <div className="flex justify-center">
+          <Logo />
+        </div>
+        <div className="my-8">
+          <h3 className="font-bold text-2xl text-center  ">
+            Seamless Link Sharing
+            <span className="_mixed_text"> Connecting Devices.</span>
+          </h3>
+        </div>
+
+        <Link component={Index}>
+          <Button>Continue</Button>
+        </Link>
+      </div>
+    </ContainerLayout>
   );
 };
 export default Home;
