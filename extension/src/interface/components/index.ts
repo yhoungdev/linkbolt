@@ -2,13 +2,16 @@ import { ChangeEvent, ReactNode } from "react";
 
 export interface IButton {
   children: ReactNode;
-  background?: string;
+  bg?: string;
   border?: string;
-  type?: string;
+  onClick?:  (event: any) => void;
+  type?: "submit" | "reset" | "button";
 }
 
 export interface ITextField<T> {
   value?: T;
+  name: string; 
+  placeholder: string;
   required?: boolean;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
