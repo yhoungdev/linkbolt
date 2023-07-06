@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--darkTheme);
+  color: #fff;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #f46412, #f14163, #7909b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.nft_svg {
+  background: url(https://res.cloudinary.com/dhdqt4xwu/image/upload/v1686397376/linkSync/Ellipse_57_1_e7nyct.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+input[type="email"] {
+  color: rgb(62, 62, 62);
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+.rotate-item {
+  animation: rotate-this-item 9s infinite;
+}
+
+@keyframes rotate-this-item {
+  0% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(-50deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
