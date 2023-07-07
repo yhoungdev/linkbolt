@@ -6,14 +6,17 @@ export interface IButton {
   border?: string;
   onClick?:  (event: any) => void;
   type?: "submit" | "reset" | "button";
+  
 }
 
 export interface ITextField<T> {
   value?: T;
   name: string; 
-  placeholder: string;
+  placeholder?: string;
   required?: boolean;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  label ?: string;
+  type?: string;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface IPictures {

@@ -1,9 +1,9 @@
-import ShareLink from "../../../../page/ShareLink";
 import { Link } from "react-chrome-extension-router";
 import { PiCaretRightBold } from "react-icons/pi";
+import ShareWith from "../../../../page/ShareLink";
 const ShareLinks = () => {
   return (
-    <Link component={ShareLink}>
+    <Link component={ShareWith}>
       <div className="my-3 bg-night  p-3 rounded-xl cursor-pointer hover:bg-secondary">
         <h4 className="text-lg font-bold my-3">Tap to share links</h4>
         <div className="flex align-middle justify-between">
