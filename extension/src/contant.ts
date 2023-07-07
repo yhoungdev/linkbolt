@@ -1,2 +1,2 @@
-export const PATHS = ''
-export const KEYNAME = ''
+export const PATHS = "";
+export const KEYNAME = "";

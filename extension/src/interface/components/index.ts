@@ -4,17 +4,16 @@ export interface IButton {
   children: ReactNode;
   bg?: string;
   border?: string;
-  onClick?:  (event: any) => void;
+  onClick?: (event: any) => void;
   type?: "submit" | "reset" | "button";
-  
 }
 
 export interface ITextField<T> {
   value?: T;
-  name: string; 
+  name: string;
   placeholder?: string;
   required?: boolean;
-  label ?: string;
+  label?: string;
   type?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
