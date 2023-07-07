@@ -21,12 +21,12 @@ const HomeStat = () => {
       <h3 className="font-bold text-2xl "> Obiabo Immanuel</h3>
 
       <h4 className=" mt-5 font-500 text-xl ">Stats</h4>
-      <div className="flex justify-between my-2 bg-night  p-3 rounded-lg">
+      <div className="flex  px-5 justify-between my-2 bg-night  p-3 rounded-lg">
         {data.map((items) => {
           return (
             <Fragment key={Number(items)}>
-              <div className="">
-                <h4>Links</h4>
+              <div className="text-center">
+                <h4>{items.title}</h4>
                 <h1 className="font-bold text-xl">35</h1>
               </div>
             </Fragment>

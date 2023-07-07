@@ -3,7 +3,7 @@ import Button from "../components/atoms/button";
 import Logo from "../components/atoms/logo";
 import { Link } from "react-chrome-extension-router";
 import Onboard from "./onboard";
-import Index from "./index";
+import IndexPage from ".";
 const Home = () => {
   return (
     <ContainerLayout>
@@ -18,7 +18,7 @@ const Home = () => {
           </h3>
         </div>
 
-        <Link component={Index}>
+        <Link component={IndexPage}>
           <Button>Continue</Button>
         </Link>
       </div>

@@ -8,7 +8,7 @@ const Button: FC<IButton> = ({ children, onClick, type, bg }) => {
       onClick={onClick}
       className={`${
         bg ? bg : "bg-primary"
-      } py-2.5 font-bold  text-white w-full`}
+      } py-2.5 font-bold  text-white w-full my-[8px]`}
     >
       {children}
     </button>
