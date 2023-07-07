@@ -2,11 +2,11 @@
 
 This readme provides a step-by-step guide on how to bundle and unpack the extension.
 
-## Technolies 
+## Technolies
 
-* NodeJs 
-* Vite ( React.js )
-* Tailwind CSS
+- NodeJs
+- Vite ( React.js )
+- Tailwind CSS
 
 ## Installation
 
@@ -18,7 +18,7 @@ This readme provides a step-by-step guide on how to bundle and unpack the extens
 1. Open a terminal or command prompt and navigate to the extension's root directory.
 2. Run the following command to install the necessary dependencies:
 3. Once the dependencies are installed, run the following command to start the development server:
-This will trigger CRXJS to perform its bundling process and generate the bundled extension file.
+   This will trigger CRXJS to perform its bundling process and generate the bundled extension file.
 
 ## Unpacking the Extension in Chrome
 

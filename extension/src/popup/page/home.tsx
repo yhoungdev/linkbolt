@@ -4,18 +4,16 @@ import Logo from "../components/atoms/logo";
 import { Link } from "react-chrome-extension-router";
 import Onboard from "./onboard";
 import IndexPage from ".";
+import HomeSwiper from "../components/organisms/home/homeSwiper";
 const Home = () => {
   return (
     <ContainerLayout>
       <div className="my-3">
-        <div className="flex justify-cente r">
+        <div className="flex justify-center items-center">
           <Logo />
         </div>
         <div className="my-8">
-          <h3 className="font-bold text-2xl text-center  ">
-            Seamless Link Sharing
-            <span className="_mixed_text"> Connecting Devices.</span>
-          </h3>
+          <HomeSwiper />
         </div>
 
         <Link component={IndexPage}>

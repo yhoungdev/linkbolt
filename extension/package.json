@@ -20,7 +20,8 @@
     "react-chrome-extension-router": "^1.4.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
-    "sass": "^1.63.6"
+    "sass": "^1.63.6",
+    "swiper": "^10.0.3"
   },
   "devDependencies": {
     "@crxjs/vite-plugin": "^1.0.14",

@@ -4,13 +4,12 @@
   padding: 0;
 }
 
-
 body {
   width: 350px !important;
 }
 
 ._mixed_text {
-  background: linear-gradient(to right,#f46412,#f14163,#7909b0);
+  background: linear-gradient(to right, #f46412, #f14163, #7909b0);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }

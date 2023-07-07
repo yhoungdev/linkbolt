@@ -1,12 +1,11 @@
 import { Suspense, lazy } from "react";
-import Home from "./popup/page/home";
-import { Router } from "react-chrome-extension-router";
 import "./styles/main.scss";
-import IndexPage from "./popup/page";
+import Loader from "./popup/components/molecules/loader";
+
 function App() {
-  // return <Home />;
+  const Home = lazy(() => import("./popup/page/home"));
   return (
-    <Suspense fallback={"loading "}>
+    <Suspense fallback={<Loader />}>
       <Home />
     </Suspense>
   );

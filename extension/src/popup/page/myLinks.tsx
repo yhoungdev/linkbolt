@@ -4,7 +4,7 @@ import NullData from "../components/atoms/nullData";
 const MyLinks = () => {
   return (
     <DashboardLayout>
-      <NullData />
+      <NullData name="links" />
     </DashboardLayout>
   );
 };

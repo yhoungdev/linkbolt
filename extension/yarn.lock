@@ -3511,6 +3511,11 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
+swiper@^10.0.3:
+  version "10.0.3"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-10.0.3.tgz#27d61b74cc3a3b360ac4c6d8e2f30f9a38d33dfa"
+  integrity sha512-jpsUDo+EmNq7N59vRCo5aDZXLF8EfWJWlTdm1jkqEH+ph8DuMTJuLjcNunN8Q88bqVxo6vceYBGIrpRIwrEGcA==
+
 tailwindcss@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-3.3.2.tgz#2f9e35d715fdf0bbf674d90147a0684d7054a2d3"
