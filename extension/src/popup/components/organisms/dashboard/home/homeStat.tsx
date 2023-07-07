@@ -7,7 +7,7 @@ const HomeStat = () => {
       count: 10,
     },
     {
-      title: "Links",
+      title: "Bookmarks",
       count: 10,
     },
     {
@@ -20,7 +20,7 @@ const HomeStat = () => {
       <h3 className="font-500 text-xl ">Good day </h3>
       <h3 className="font-bold text-2xl "> Obiabo Immanuel</h3>
 
-      <h4 className=" mt-5 font-500 text-xl ">Good day </h4>
+      <h4 className=" mt-5 font-500 text-xl ">Stats</h4>
       <div className="flex justify-between my-2 bg-night  p-3 rounded-lg">
         {data.map((items) => {
           return (

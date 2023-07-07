@@ -1,4 +1,5 @@
 import DashboardLayout from "../../layout/dashboardLayout";
+import ShareLinks from "../components/molecules/dashboard/home/shareLinks";
 import HomeStat from "../components/organisms/dashboard/home/homeStat";
 
 const Index = () => {
@@ -6,6 +7,7 @@ const Index = () => {
     <DashboardLayout>
       <div className="my-4">
         <HomeStat />
+        <ShareLinks />
       </div>
     </DashboardLayout>
   );

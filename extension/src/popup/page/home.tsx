@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <ContainerLayout>
       <div className="my-3">
-        <div className="flex justify-center">
+        <div className="flex justify-cente r">
           <Logo />
         </div>
         <div className="my-8">
