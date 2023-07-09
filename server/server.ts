@@ -7,7 +7,9 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-app.use("/api", auth_router), app.use("/api", user_actions_route);
+app.use("/api", auth_router);
+app.use("/api", user_actions_route);
+
 
 app.get("/", (req, res) => {
 	res.send(`viewing on port ${PORT}`);
