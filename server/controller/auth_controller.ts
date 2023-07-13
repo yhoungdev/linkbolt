@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { StatusCode } from "../enums/staus_code";
+import { StatusCode } from "../enums/staus_code"; 
 const passport = require("passport");
 
 export const signup = async (req: Request, res: Response) => {
