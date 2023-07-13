@@ -10,9 +10,12 @@ const ShareLinks = () => {
   ];
   return (
     <Link component={ShareWith}>
-      <div className="my-3 bg-night  p-3 rounded-xl cursor-pointer hover:bg-secondary">
-        <h4 className="text-lg font-bold my-3">Tap to share links</h4>
-        <div className="flex align-middle justify-between">
+      <div className="p-3 my-3 cursor-pointer bg-night rounded-xl hover:bg-secondary">
+        <div className="flex items-center justify-between">
+          <h4 className="my-3 text-lg font-bold ">Tap to share links</h4>
+          <p className="text-primary">Coming Soon</p>
+        </div>
+        <div className="flex justify-between align-middle">
           <div>
             <div className="flex">
               {images.map((items, index) => {

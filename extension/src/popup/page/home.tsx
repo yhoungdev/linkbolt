@@ -7,20 +7,21 @@ import IndexPage from ".";
 import HomeSwiper from "../components/organisms/home/homeSwiper";
 const Home = () => {
   return (
-    <ContainerLayout>
-      <div className="my-3">
-        <div className="flex justify-center items-center">
-          <Logo />
-        </div>
-        <div className="my-8">
-          <HomeSwiper />
-        </div>
+    // <ContainerLayout>
+    //   <div className="my-3">
+    //     <div className="flex items-center justify-center">
+    //       <Logo />
+    //     </div>
+    //     <div className="my-8">
+    //       <HomeSwiper />
+    //     </div>
 
-        <Link component={IndexPage}>
-          <Button>Continue</Button>
-        </Link>
-      </div>
-    </ContainerLayout>
+    //     <Link component={IndexPage}>
+    //       <Button>Continue</Button>
+    //     </Link>
+    //   </div>
+    // </ContainerLayout>
+    <IndexPage />
   );
 };
 export default Home;
