@@ -11,8 +11,3 @@ export const login = async (req: Request, res: Response) => {
 	const { name, email } = req.body;
 	res.status(StatusCode.OK).json({ name, email });
 };
-
-
-const sign_with = async (req: Request, res: Response) => {
-	
-}
