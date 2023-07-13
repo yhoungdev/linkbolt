@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@types/js-cookie": "^3.0.3",
+    "axios": "^1.4.0",
+    "cogo-toast": "2.0.1",
     "i": "^0.3.7",
     "js-cookie": "^3.0.5",
     "npm": "^9.8.0",
@@ -21,7 +23,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
     "sass": "^1.63.6",
-    "swiper": "^10.0.3"
+    "swiper": "^10.0.3",
+    "swr": "^2.2.0"
   },
   "devDependencies": {
     "@crxjs/vite-plugin": "^1.0.14",

@@ -1,6 +1,5 @@
 import DashboardLayout from "../../layout/dashboardLayout";
 import NullData from "../components/atoms/nullData";
-import Button from "../components/atoms/button";
 import { Link, goTo } from "react-chrome-extension-router";
 import Add_new_link from "./links/add_link";
 
