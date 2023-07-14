@@ -5,7 +5,10 @@
 	"license": "MIT",
 	"scripts": {
 		"dev": "nodemon  server.ts",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"generate": "prisma generate",
+		"studio": "npx prisma studio",
+		"db": "npx prisma db push"
 	},
 	"dependencies": {
 		"@prisma/client": "^4.16.2",
