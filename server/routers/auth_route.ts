@@ -12,8 +12,11 @@ router.get("/auth/google", passport.authenticate("google", { scope: ["email", "p
 
 router.get("/google/login", passport.authenticate("google"), (req: Request, res: Response) => {
     //@ts-ignore
+    console.log(req?.session)
+
+    //@ts-ignore
     const profile = req?.user
-    res.status(200).json({
+    res.status(200).json({   
     success: "welcome back",
     profile: profile
   });
