@@ -15,6 +15,7 @@ export interface ITextField<T> {
   required?: boolean;
   label?: string;
   type?: string;
+  error?: ReactNode;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 

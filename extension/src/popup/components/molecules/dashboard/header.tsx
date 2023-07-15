@@ -3,7 +3,7 @@ import Logo from "../../atoms/logo";
 import { Link } from "react-chrome-extension-router";
 const DashboardHeader = () => {
   return (
-    <div className="flex items-center  justify-between">
+    <div className="flex items-center justify-between">
       <Link component={Index}>
         <Logo />
       </Link>

@@ -10,14 +10,13 @@ body {
 .swiper-pagination {
   position: static !important;
   margin-top: 1.5em !important;
-  
-  .swiper-pagination-bullet {
-    background-color: #F46412;
-  }
 
+  .swiper-pagination-bullet {
+    background-color: #f46412;
+  }
 }
 
-.loader{
+.loader {
   display: block;
   position: relative;
   height: 12px;
@@ -26,17 +25,19 @@ body {
   border-radius: 10px;
   overflow: hidden;
 }
-.loader:after{
-  content: '';
+.loader:after {
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
   width: 0;
-  background: #FF3D00;
+  background: #ff3d00;
   animation: 6s prog ease-in infinite;
 }
 
 @keyframes prog {
-  to  {   width: 100%;}
+  to {
+    width: 100%;
+  }
 }
