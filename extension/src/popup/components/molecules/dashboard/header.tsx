@@ -8,7 +8,7 @@ const DashboardHeader = () => {
         <Logo />
       </Link>
 
-      <div className="bg-secondary h-[50px] w-[50px] rounded-full "></div>
+      <div className="bg-secondary ring-1  ring-primary h-[50px] w-[50px] rounded-full "></div>
     </div>
   );
 };

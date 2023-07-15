@@ -16,6 +16,7 @@
     "axios": "^1.4.0",
     "cogo-toast": "2.0.1",
     "formik": "^2.4.2",
+    "gradient-avatar": "^1.0.2",
     "i": "^0.3.7",
     "js-cookie": "^3.0.5",
     "npm": "^9.8.0",
