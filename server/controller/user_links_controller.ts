@@ -23,6 +23,7 @@ export const save_user_link = async (req: Request, res: Response) => {
 	try {
 		const checks = await validation_schema.validate(body);
 		const add_link = await prisma.links.create({
+			
 			data: {
 				...checks, 
 				userId: body.userId
@@ -31,7 +32,7 @@ export const save_user_link = async (req: Request, res: Response) => {
 		})
 
 		if(add_link) {
-			return res.status(StatusCode.OK).json({ success: "Link successfully added" });
+			return res.status(StatusCode.OK).json({ message: "Link successfully added" });
 		} else {
 			return res.status(401).send("something went wrong ")
 		}
