@@ -4,7 +4,7 @@ import NullData from "../components/atoms/nullData";
 const Message = () => {
   return (
     <DashboardLayout>
-      <NullData name="message" />
+      <NullData name="message" content="Comming Soon" />
     </DashboardLayout>
   );
 };

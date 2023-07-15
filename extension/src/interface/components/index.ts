@@ -6,6 +6,7 @@ export interface IButton {
   border?: string;
   onClick?: (event: any) => void;
   type?: "submit" | "reset" | "button";
+  loading?: boolean;
 }
 
 export interface ITextField<T> {

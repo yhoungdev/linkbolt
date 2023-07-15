@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { IButton } from "../../../interface/components";
 
-const Button: FC<IButton> = ({ children, onClick, type, bg }) => {
+const Button: FC<IButton> = ({ children, onClick, type, bg, loading }) => {
   return (
     <button
       type={type}
@@ -13,7 +13,7 @@ const Button: FC<IButton> = ({ children, onClick, type, bg }) => {
         bg || "bg-primary"
       } py-2.5 font-bold  text-white w-full my-[8px]`}
     >
-      {children}
+      {loading ? "Loading..." : <>{children}</>}
     </button>
   );
 };

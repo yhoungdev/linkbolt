@@ -6,23 +6,35 @@ import { useFormik } from "formik";
 import { add_links_validations } from "../../../validations";
 import { goTo } from "react-chrome-extension-router";
 import MyLinks from "../myLinks";
+import { useState } from "react";
 
 const Add_new_link = () => {
+  const [loader, setLoader] = useState(false);
   const payloads = {
     name: "",
     url: "",
   };
 
   const handlePost = async (value: any) => {
+    setLoader(true);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
+
+    const payload = {
+      userId: "64b1bd1ebfa735f8870f953d",
+      ...value,
+    };
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     //@ts-ignore
     const { response } = await postData({
       url: "/user/save_link",
-      body: value,
+      body: payload,
     });
 
     if (response?.status === 200) {
       setTimeout(() => goTo(MyLinks), 1500);
+    } else {
+      setLoader(false);
     }
   };
 
@@ -55,7 +67,9 @@ const Add_new_link = () => {
             error={formik.errors.url}
           />
 
-          <Button type="submit">Add Link</Button>
+          <Button type="submit" loading={loader}>
+            Add Link
+          </Button>
         </form>
       </div>
     </DashboardLayout>
