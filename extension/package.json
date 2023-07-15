@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "@types/js-cookie": "^3.0.3",
     "axios": "^1.4.0",
     "cogo-toast": "2.0.1",
@@ -24,6 +25,7 @@
     "react-dom": "^18.2.0",
     "react-google-button": "^0.7.2",
     "react-icons": "^4.10.1",
+    "react-redux": "^8.1.1",
     "sass": "^1.63.6",
     "swiper": "^10.0.3",
     "swr": "^2.2.0",

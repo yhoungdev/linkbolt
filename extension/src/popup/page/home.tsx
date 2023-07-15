@@ -4,12 +4,11 @@ import Logo from "../components/atoms/logo";
 import { Link } from "react-chrome-extension-router";
 import HomeSwiper from "../components/organisms/home/homeSwiper";
 import Onboard from "./onboard";
-import DisplayLink from "../components/molecules/dashboard/links/link_box";
 
 const Home = () => {
   return (
     <ContainerLayout>
-      {/* <div className="my-3">
+      <div className="my-3">
         <div className="flex items-center justify-center">
           <Logo />
         </div>
@@ -20,8 +19,7 @@ const Home = () => {
         <Link component={Onboard}>
           <Button>Continue</Button>
         </Link>
-      </div> */}
-      <DisplayLink />
+      </div>
     </ContainerLayout>
   );
 };
