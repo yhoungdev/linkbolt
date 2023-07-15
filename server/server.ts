@@ -15,14 +15,13 @@ app.use(cors());
 app.use(express.json());
 app.use(
 	express_session({
-		secret: cypherKey, // Replace with your own secret key
 		resave: false,
 		saveUninitialized: false,
 	})
 );
 
 passport.serializeUser((user: any, done: any) => {
-	// Store only the user ID in the session
+	
 	done(null, user.id);
 });
 
