@@ -8,14 +8,17 @@ interface IDisplay {
   onClick?: () => void;
 }
 
-const DisplayLink: FC<IDisplay> = () => {
+const DisplayLink: FC<IDisplay> = ({ name, url }) => {
   return (
-    <div className="flex justify-between w-full px-3 py-2 rounded-md bg-secondary">
-      <h4>LinkedIn</h4>
+    <div className="flex justify-between w-full px-3 py-2 my-3 rounded-md bg-secondary">
+      <h4>{name}</h4>
       <BiCopyAlt
         cursor={"pointer"}
         color={"#F46412"}
-        onClick={() => copyToClipboard()}
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-ignore
+        
+        onClick={() => copyToClipboard(url)}
       />
     </div>
   );

@@ -3,7 +3,8 @@ import NullData from "../components/atoms/nullData";
 import { Link, goTo } from "react-chrome-extension-router";
 import Add_new_link from "./links/add_link";
 import { useFetch } from "../../utils/request";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
+import DisplayLink from "../components/molecules/dashboard/links/link_box";
 
 const MyLinks = () => {
   const [links, setLinks] = useState([]);
@@ -24,7 +25,22 @@ const MyLinks = () => {
   );
   return (
     <DashboardLayout>
-      {/* {links.length === 0 ? <NullData name="links" /> : <></>} */}
+      <div className="my-8">
+        <h3 className="my-4 font-bold">My saved links</h3>
+        {links?.length === 0 ? (
+          <NullData name="links" />
+        ) : (
+          <>
+            {links?.map((items: any, index) => {
+              return (
+                <Fragment key={index}>
+                  <DisplayLink name={items?.name} url={items?.url} />
+                </Fragment>
+              );
+            })}
+          </>
+        )}
+      </div>
 
       {add_link}
     </DashboardLayout>

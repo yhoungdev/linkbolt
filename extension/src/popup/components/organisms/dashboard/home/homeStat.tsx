@@ -1,18 +1,20 @@
 import { Fragment } from "react";
-
+import { useSelector } from "react-redux";
+import { formatNumber } from "../../../../../utils/formatNumber";
 const HomeStat = () => {
+  const { user_links } = useSelector((state: any) => state?.links);
   const data = [
     {
       title: "Links",
-      count: 10,
+      count: formatNumber(user_links?.length),
     },
     {
       title: "Bookmarks",
-      count: 10,
+      count: formatNumber(0),
     },
     {
-      title: "Links",
-      count: 10,
+      title: "Share Links",
+      count: formatNumber(0),
     },
   ];
   return (
@@ -27,7 +29,7 @@ const HomeStat = () => {
             <Fragment key={index}>
               <div className="text-center">
                 <h4>{items.title}</h4>
-                <h1 className="text-xl font-bold">35</h1>
+                <h1 className="text-xl font-bold">{items?.count || 0}</h1>
               </div>
             </Fragment>
           );
