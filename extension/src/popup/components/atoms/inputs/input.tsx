@@ -9,6 +9,7 @@ const Input: FC<ITextField<string>> = ({
   placeholder,
   label,
   type,
+  error,
 }: ITextField<string>) => {
   const input = useRef(null);
 
@@ -27,6 +28,7 @@ const Input: FC<ITextField<string>> = ({
         onChange={onChange}
         required={required}
       />
+      <p className="text-red-600">{error}</p>
     </div>
   );
 };

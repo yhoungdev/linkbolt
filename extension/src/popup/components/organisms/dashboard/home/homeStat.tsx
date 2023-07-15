@@ -16,18 +16,18 @@ const HomeStat = () => {
     },
   ];
   return (
-    <div className="py-3 px-3 rounded-xl bg-secondary">
-      <h3 className="font-500 text-xl ">Good day 👋 </h3>
-      <h3 className="font-bold text-2xl _mixed_text"> Obiabo Immanuel</h3>
+    <div className="px-3 py-3 rounded-xl bg-secondary">
+      <h3 className="text-xl font-500 ">Good day 👋 </h3>
+      <h3 className="text-2xl font-bold _mixed_text"> Obiabo Immanuel</h3>
 
-      <h4 className=" mt-5 font-500 text-xl ">Stats</h4>
-      <div className="flex  px-5 justify-between my-2 bg-night  p-3 rounded-lg">
-        {data.map((items) => {
+      <h4 className="mt-5 text-xl font-500">Stats</h4>
+      <div className="flex justify-between p-3 px-5 my-2 rounded-lg bg-night">
+        {data.map((items, index) => {
           return (
-            <Fragment key={Number(items)}>
+            <Fragment key={index}>
               <div className="text-center">
                 <h4>{items.title}</h4>
-                <h1 className="font-bold text-xl">35</h1>
+                <h1 className="text-xl font-bold">35</h1>
               </div>
             </Fragment>
           );
