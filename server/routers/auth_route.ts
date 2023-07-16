@@ -18,61 +18,46 @@ router.get(
 router.get(
 	"/google/login",
 	passport.authenticate("google"),
+
 	async (req: Request, res: Response) => {
 		//@ts-ignore
 		const profile = req?.user;
 		try {
-			const user = await prisma.user.create({
-				data: {
-					...profile?._json, 
-					
-				}
-			})
+			const existed = await prisma.user.findUnique({
+				where: {
+					sub: profile?._json?.sub,
+				},
+			});
 
-			if (user) {
-				return res.status(StatusCode.OK).json({
-					message: "User created successfully", 
-					data: profile
-				})
+			if (!existed) {
+				const user = await prisma.user.create({
+					data: {
+						...profile?._json,
+					},
+				});
+
+				if (user) {
+					return res.status(StatusCode.OK).json({
+						message: "User created successfully",
+						data: profile,
+					});
+				} else {
+					return res
+						.status(StatusCode.Forbidden)
+						.json({ error: "Something went wrong" });
+				}
 			} else {
-				return res.status(StatusCode.Forbidden).json({error: "Something went wrong"})
+				return res
+				.status(StatusCode.OK)
+				.json({ message: `Welcome back ${profile?._json?.name}`, data: profile?._json });
 			}
 
-
-	
-		} catch ( err ) {
-			console.log(err);
-		}
-		
-		res.status(200).json({
-			success: "welcome back",
 			
-		});
+		} catch (err) {
+			return res.status(StatusCode.InternalServerError).json({error: "Internal Server Error"})
+		}
 	}
 );
 
-
-
-router.get("/session", (req, res) => {
-	//@ts-ignore
-	const passport = req?.session
-	if( passport && passport?.passport) {
-		return 	res.status(200).json(  {message: passport?.passport});
-	} else {
-		res.status(200).send("expired")
-	}
-
-
-
-	res.status(200).send("OK")
-
-
-	
-	
-  });
-  
-
-
 const auth_router = router;
-
 export default auth_router;

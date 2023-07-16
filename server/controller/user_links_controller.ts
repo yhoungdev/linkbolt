@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import * as Yup from "yup";
 import { StatusCode } from "../enums/staus_code";
-import { Prisma, PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 
 const router = express.Router();
 const prisma = new PrismaClient();
@@ -32,7 +32,7 @@ export const save_user_link = async (req: Request, res: Response) => {
 				.status(StatusCode.OK)
 				.json({ message: "Link successfully added" });
 		} else {
-			return res.status(401).send("something went wrong ");
+			return res.status(StatusCode.BadRequest).send("something went wrong ");
 		}
 	} catch (err: any) {
 		return res.status(StatusCode.BadRequest).json({ error: err.message });
