@@ -31,6 +31,11 @@ app.use(
 	})
 );
 
+passport.serializeUser((user: any, done: any) => {
+	
+	done(null, user.id);
+});
+
 app.use(passport.initialize());
 app.use(passport.session());
 
