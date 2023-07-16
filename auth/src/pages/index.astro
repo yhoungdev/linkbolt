@@ -1,16 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+import '../styles/main.scss'
+import Header from '../components/molecules/header/header'
+import ContainerLayout from '../layouts/ContainerLayout.astro';
+import Auth from '../components/pages/auth.astro';
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-	
+		<Auth/>
 	</main>
 </Layout>
 
