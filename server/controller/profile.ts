@@ -20,6 +20,7 @@ const get_profile = async  (req: Request, res: Response) => {
 		});
 
 		if ( fetchProfile ) {
+			
 			const { email , id , sub } = fetchProfile
 			const data = {
 				email: email, 

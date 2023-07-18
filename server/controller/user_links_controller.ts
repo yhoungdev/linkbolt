@@ -18,12 +18,15 @@ const validate_share_links = Yup.object().shape({
 
 export const save_user_link = async (req: Request, res: Response) => {
 	const body = req.body;
+	//@ts-ignore
+	const userId = req?.id;
+
 	try {
 		const checks = await validation_schema.validate(body);
 		const add_link = await prisma.links.create({
 			data: {
 				...checks,
-				userId: body.userId,
+				userId: userId,
 			},
 		});
 
@@ -39,6 +42,26 @@ export const save_user_link = async (req: Request, res: Response) => {
 	}
 };
 
+
+
+//get links from user
+export const get_user_links = async (req: Request, res: Response) => {
+	//@ts-ignore
+	const userId = req?.id;
+
+	try {
+		const get_links = await prisma.links.findMany({
+			where: {
+				userId: userId
+			},
+		});
+		return res.status(StatusCode.OK).json({ data: get_links });
+	} catch (err) {
+		res.status(StatusCode.OK).json({ message: "No link found" });
+	}
+};
+
+
 //share links to friends
 export const share_links = async (req: Request, res: Response) => {
 	try {
@@ -46,20 +69,5 @@ export const share_links = async (req: Request, res: Response) => {
 		return res.status(StatusCode.OK).json({ success: validateObj });
 	} catch (error: any) {
 		return res.status(StatusCode.BadRequest).json({ error: error?.message });
-	}
-};
-
-//get links from user
-export const get_user_links = async (req: Request, res: Response) => {
-	const userId = req.params.id;
-	try {
-		const get_links = await prisma.links.findMany({
-			where: {
-				userId: userId,
-			},
-		});
-		return res.status(StatusCode.OK).json({ data: get_links });
-	} catch (err) {
-		res.status(StatusCode.OK).json({ message: "No link found" });
 	}
 };
