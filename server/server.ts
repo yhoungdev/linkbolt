@@ -6,8 +6,9 @@ const crypto = require("crypto");
 const express_session = require("express-session");
 const cors = require("cors");
 const passport = require("passport");
-import { Request, Response } from 'express';
 import { StatusCode } from "./enums/staus_code";
+import path from "path";
+const flash = require("express-flash");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -23,6 +24,8 @@ app.use(
 );
 
 app.use(express.json());
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 app.use(
 	express_session({
@@ -30,19 +33,19 @@ app.use(
 		resave: false,
 		saveUninitialized: false,
 		cookie: {
-			maxAge: 24 * 60 * 60 * 1000
-		  },
+			maxAge: 24 * 60 * 60 * 1000,
+		},
 	})
 );
 
-
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 passport.serializeUser((user: any, done: any) => {
 	const serializedUser = {
 		id: user.id,
-		expiresAt: Date.now() + 24 * 60 * 60 * 1000
+		expiresAt: Date.now() + 24 * 60 * 60 * 1000,
 	};
 	done(null, serializedUser);
 });
@@ -56,23 +59,19 @@ passport.deserializeUser((serializedUser: any, done: any) => {
 	}
 });
 
+
 app.use("/api", auth_router);
 app.use("/api", user_actions_route);
 app.use("/api", profile_router);
 
-
-
-
 app.get("/", (req, res) => {
 	res.send(`viewing on port ${PORT}`);
+	
 });
 
-
 app.get("/google/failed", (req, res) => {
-	res.status(StatusCode.Forbidden).json({"error": " Authentication Failed"})
-})
-
-
+	res.status(StatusCode.Forbidden).json({ error: " Authentication Failed" });
+});
 
 process.env.DEBUG = "passport:* node server.js";
 
