@@ -1,6 +1,6 @@
 import express, { Response, Request } from "express";
 import { login, signup } from "../controller/auth_controller";
-import { Prisma, PrismaClient } from "@prisma/client";
+import {  PrismaClient } from "@prisma/client";
 import { StatusCode } from "../enums/staus_code";
 const passport = require("../config/passport_setup");
 

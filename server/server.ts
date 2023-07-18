@@ -7,6 +7,7 @@ const express_session = require("express-session");
 const cors = require("cors");
 const passport = require("passport");
 import { Request, Response } from 'express';
+import { StatusCode } from "./enums/staus_code";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -29,8 +30,8 @@ app.use(
 		resave: false,
 		saveUninitialized: false,
 		cookie: {
-			maxAge: 60 * 1000,
-		},
+			maxAge: 24 * 60 * 60 * 1000
+		  },
 	})
 );
 
@@ -41,7 +42,7 @@ app.use(passport.session());
 passport.serializeUser((user: any, done: any) => {
 	const serializedUser = {
 		id: user.id,
-		expiresAt: Date.now() + 30 * 60 * 1000,
+		expiresAt: Date.now() + 24 * 60 * 60 * 1000
 	};
 	done(null, serializedUser);
 });
@@ -65,6 +66,11 @@ app.use("/api", profile_router);
 app.get("/", (req, res) => {
 	res.send(`viewing on port ${PORT}`);
 });
+
+
+app.get("/google/failed", (req, res) => {
+	res.status(StatusCode.Forbidden).json({"error": " Authentication Failed"})
+})
 
 
 

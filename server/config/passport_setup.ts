@@ -20,6 +20,8 @@ passport.use(
 			callbackURL: "/api/google/login",
 			passReqToCallback: true,
 			session: true,
+			failureRedirect: '/google/failed', 
+			successReturnToOrRedirect: '/'
 		},
 		auth_user
 	)
