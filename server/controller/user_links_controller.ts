@@ -18,24 +18,57 @@ const validate_share_links = Yup.object().shape({
 
 export const save_user_link = async (req: Request, res: Response) => {
 	const body = req.body;
+	//@ts-ignore
+	const userId = req?.id;
+
 	try {
 		const checks = await validation_schema.validate(body);
-		const add_link = await prisma.links.create({
-			data: {
-				...checks,
-				userId: body.userId,
+
+		const linkExisted = await prisma.links.findFirst({
+			where: {
+				url: body?.url,
 			},
 		});
 
-		if (add_link) {
-			return res
-				.status(StatusCode.OK)
-				.json({ message: "Link successfully added" });
-		} else {
-			return res.status(StatusCode.BadRequest).send("something went wrong ");
+		if (!linkExisted) {
+			const add_link = await prisma.links.create({
+				data: {
+					...checks,
+					userId: userId,
+				},
+			});
+
+			if (add_link) {
+				return res
+					.status(StatusCode.OK)
+					.json({ message: "Link successfully added" });
+			} else {
+				return res.status(StatusCode.BadRequest).send("something went wrong ");
+			}
 		}
+
+		return res
+			.status(StatusCode.Forbidden)
+			.json({ error: "Url already exists" });
 	} catch (err: any) {
 		return res.status(StatusCode.BadRequest).json({ error: err.message });
+	}
+};
+
+//get links from user
+export const get_user_links = async (req: Request, res: Response) => {
+	//@ts-ignore
+	const userId = req?.id;
+
+	try {
+		const get_links = await prisma.links.findMany({
+			where: {
+				userId: userId,
+			},
+		});
+		return res.status(StatusCode.OK).json({ data: get_links });
+	} catch (err) {
+		res.status(StatusCode.OK).json({ message: "No link found" });
 	}
 };
 
@@ -46,20 +79,5 @@ export const share_links = async (req: Request, res: Response) => {
 		return res.status(StatusCode.OK).json({ success: validateObj });
 	} catch (error: any) {
 		return res.status(StatusCode.BadRequest).json({ error: error?.message });
-	}
-};
-
-//get links from user
-export const get_user_links = async (req: Request, res: Response) => {
-	const userId = req.params.id;
-	try {
-		const get_links = await prisma.links.findMany({
-			where: {
-				userId: userId,
-			},
-		});
-		return res.status(StatusCode.OK).json({ data: get_links });
-	} catch (err) {
-		res.status(StatusCode.OK).json({ message: "No link found" });
 	}
 };

@@ -12,6 +12,7 @@ const Onboard = () => {
     chrome.windows.create({
       url: url,
       width: 400,
+      height: 600,
     });
   };
 
@@ -24,7 +25,7 @@ const Onboard = () => {
         </p>
 
         <center>
-          <GoogleButton onClick={() => goTo(IndexPage)} />
+          <GoogleButton onClick={openNewTab} />
         </center>
       </div>
     </ContainerLayout>
