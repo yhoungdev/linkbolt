@@ -23,20 +23,22 @@ export const postData = async ({ url, body }: IRequest) => {
 };
 
 export const useFetch = (url: string , params?: any  ) => {
-  const [data, setData] = useState<any>(null); // Specify the data type if known
-
+  const [data, setData] = useState<any>(null); 
+  const [ error , setError ] = useState<any>(null)
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${defaultUrl}${url}`, params);
         setData(response.data);
       } catch (err: any) {
-        console.log(err);
+        const error = err; 
+        setError(error);
+        console.log(err?.response?.data);
       }
     };
 
     fetchData();
   }, [url]);
 
-  return { data };
+  return { data , error };
 };
