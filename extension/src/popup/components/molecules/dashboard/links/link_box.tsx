@@ -17,7 +17,7 @@ const DisplayLink: FC<IDisplay> = ({ name, url }) => {
         color={"#F46412"}
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         //@ts-ignore
-        
+
         onClick={() => copyToClipboard(url)}
       />
     </div>

@@ -1,13 +1,25 @@
 import axios from "axios";
 import cogoToast from "cogo-toast";
 import { useEffect, useState } from "react";
+import { useAuth } from "../hooks/useAuth";
 
 interface IRequest {
   url: string;
   body?: any;
 }
 
+
+
+
+
+
 const defaultUrl = "http://localhost:3000/api";
+
+
+
+// const headers = {
+//   authourization: `Bearer ${isAuthenticated}` 
+// }
 
 export const postData = async ({ url, body }: IRequest) => {
   try {
@@ -22,16 +34,16 @@ export const postData = async ({ url, body }: IRequest) => {
   }
 };
 
-export const useFetch = (url: string , params?: any  ) => {
-  const [data, setData] = useState<any>(null); 
-  const [ error , setError ] = useState<any>(null)
+export const useFetch = (url: string, params?: any) => {
+  const [data, setData] = useState<any>(null);
+  const [error, setError] = useState<any>(null);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${defaultUrl}${url}`, params);
         setData(response.data);
       } catch (err: any) {
-        const error = err; 
+        const error = err;
         setError(error);
         console.log(err?.response?.data);
       }
@@ -40,5 +52,5 @@ export const useFetch = (url: string , params?: any  ) => {
     fetchData();
   }, [url]);
 
-  return { data , error };
+  return { data, error };
 };
