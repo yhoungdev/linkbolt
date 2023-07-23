@@ -8,8 +8,8 @@ import { Autoplay, Pagination } from "swiper/modules";
 const HomeSwiper = () => {
   const devices = (
     <div className="text-center">
-      <h1 className="text-3xl my-4">🔗</h1>
-      <h3 className="font-bold text-2xl   ">
+      <h1 className="my-4 text-3xl">🔗</h1>
+      <h3 className="text-2xl font-bold ">
         Seamless Link Sharing
         <span className="_mixed_text"> Connecting Devices.</span>
       </h3>
@@ -18,8 +18,8 @@ const HomeSwiper = () => {
 
   const messages = (
     <div className="text-center">
-      <h1 className="text-3xl my-4">🔑</h1>
-      <h3 className=" font-bold text-2xl   ">
+      <h1 className="my-4 text-3xl">🔑</h1>
+      <h3 className="text-2xl font-bold ">
         Send
         <span className="_mixed_text"> Cryptographic </span> Messages
       </h3>
@@ -28,8 +28,8 @@ const HomeSwiper = () => {
 
   const share = (
     <div className="text-center">
-      <h1 className="text-3xl my-4">😎</h1>
-      <h3 className=" font-bold text-2xl text-center  ">
+      <h1 className="my-4 text-3xl">😎</h1>
+      <h3 className="text-2xl font-bold text-center ">
         Share
         <span className="_mixed_text"> your links with </span> Friends
       </h3>

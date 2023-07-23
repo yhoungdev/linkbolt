@@ -7,5 +7,3 @@ export const useAuth = () => {
   const isAuthenticated = auth_jwt;
   return { isAuthenticated };
 };
-
-

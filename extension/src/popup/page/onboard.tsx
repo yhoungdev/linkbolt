@@ -11,24 +11,10 @@ const Onboard = () => {
   const [userData, setUserData] = useState(null);
   const [isError, setError] = useState();
 
-  // const getProfile = async () => {
-  //   try {
-  //     const response = await axios("http://localhost:3000/api/profile");
-  //     const data = await response?.json();
-  //     console.log(data);
-  //   } catch (err) {
-  //     console.log("failed", err);
-  //   }
-  // };
-  // // Fetch auth data
-  // useEffect(() => {
-  //   getProfile();
-  // }, []);
-
   const openNewTab = () => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     //@ts-ignore
-    chrome.windows.create({
+    chrome.tabs.create({
       url: url,
       width: 400,
       height: 600,

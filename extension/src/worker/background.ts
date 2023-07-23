@@ -13,17 +13,17 @@ function logAuthToken(cookie) {
 }
 
 chrome.cookies.get(
-  { url: "http://localhost:3001/", name: "auth_cookie" },
+  { url: "http://localhost:3000/*", name: "auth_cookie" },
   function (cookie) {
     logAuthToken(cookie);
   },
 );
 
 chrome.permissions.contains(
-  { origins: ["http://localhost:3001/*"] },
+  { origins: ["http://localhost:3000/*"] },
   function (result) {
     if (result) {
-      console.log("Extension has permission to access http://localhost:3001");
+      console.log("Extension has permission to access http://localhost:3000");
     } else {
       console.log(
         "Extension does not have permission for http://localhost:3000",

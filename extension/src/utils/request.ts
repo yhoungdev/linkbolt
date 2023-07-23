@@ -6,24 +6,24 @@ import { useAuth } from "../hooks/useAuth";
 interface IRequest {
   url: string;
   body?: any;
+  params?: any;
 }
 
 
 
-
-
-
-const defaultUrl = "http://localhost:3000/api";
-
-
+export const defaultUrl = "http://localhost:3000/api";
 
 // const headers = {
-//   authourization: `Bearer ${isAuthenticated}` 
+//   authourization: `Bearer ${isAuthenticated}`
 // }
 
-export const postData = async ({ url, body }: IRequest) => {
+export const postData = async ({ url, body, params }: IRequest) => {
   try {
-    const request = await axios.post(`${defaultUrl}/${url}`, body);
+    const request = await axios.post(`${defaultUrl}/${url}`, body, {
+      headers: {
+        Authorization: `Bearer ${params}`,
+      },
+    });
     const response = request;
     const responseData = response?.data?.message;
     cogoToast.success(responseData);
@@ -40,7 +40,11 @@ export const useFetch = (url: string, params?: any) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${defaultUrl}${url}`, params);
+        const response = await axios.get(`${defaultUrl}${url}`, {
+          headers: {
+            Authorization: `Bearer ${params}`,
+          },
+        });
         setData(response.data);
       } catch (err: any) {
         const error = err;
@@ -54,3 +58,23 @@ export const useFetch = (url: string, params?: any) => {
 
   return { data, error };
 };
+
+
+//function to delete 
+export const deleteData = async (url: string ,  params: any  ) => {
+  try {
+    const deleteItem = await axios.delete(`${defaultUrl}${url}` , {
+      headers: {
+        Authorization: `Bearer ${params}`,
+      },
+    })
+
+    const data = await deleteItem;
+    if(data.status === 200) {
+      cogoToast.success("Successfully deleted")
+    } 
+
+  } catch ( err ) {
+    cogoToast.error("Error deleting link")
+  }
+}

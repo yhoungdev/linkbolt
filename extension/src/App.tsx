@@ -1,14 +1,15 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import "./styles/main.scss";
 import Loader from "./popup/components/molecules/loader";
 import { GetUserLinks } from "./request/get_user_links";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateToken } from "./redux/slice/authSlice";
 import { useAuth } from "./hooks/useAuth";
+import { getProfile } from "./request/get_profile_details";
 
 function App() {
   const dispatch = useDispatch();
-  GetUserLinks();
+
   const Home = lazy(() => import("./popup/page/home"));
   const Index = lazy(() => import("./popup/page"));
 
@@ -19,6 +20,9 @@ function App() {
   });
 
   const { isAuthenticated } = useAuth();
+
+  GetUserLinks();
+  getProfile();
 
   return (
     <Suspense fallback={<Loader />}>

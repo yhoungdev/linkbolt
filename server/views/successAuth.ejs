@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <h1></h1>
-    <h2>Window will be closed automatically in 3 seconds.</h2>
-    <script>
-      setTimeout(() => {
-        if (typeof window !== 'undefined') {
-        
-            window.close();
-        }
-      }, 3000);
-    </script>
-  </body>
+<head>
+  <title>Successfully Logged In</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #666;
+      font-size: 18px;
+    }
+
+    .close-icon {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>You have successfully logged in!</h1>
+  <h2>Close this tab with the icon button</h2>
+
+  <span class="close-icon" onclick="closeTab()">&#10005;</span>
+
+  <script>
+    function closeTab() {
+      window.close();
+    }
+  </script>
+</body>
 </html>

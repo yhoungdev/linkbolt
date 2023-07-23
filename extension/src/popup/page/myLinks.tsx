@@ -5,14 +5,20 @@ import Add_new_link from "./links/add_link";
 import { useFetch } from "../../utils/request";
 import { Fragment, useEffect, useState } from "react";
 import DisplayLink from "../components/molecules/dashboard/links/link_box";
+import { useAuth } from "../../hooks/useAuth";
+import { useDispatch } from "react-redux";
+import { updateUserTotalLinks } from "../../redux/slice/linkSlice";
 
 const MyLinks = () => {
   const [links, setLinks] = useState([]);
+  const { isAuthenticated } = useAuth();
+  const dispatch = useDispatch();
 
   const goToLink = () => goTo(Add_new_link);
-  const { data } = useFetch("/user/links/64b1bd1ebfa735f8870f953d");
+  const { data } = useFetch("/user/links", isAuthenticated);
   useEffect(() => {
     setLinks(data?.data);
+    dispatch(updateUserTotalLinks(links?.length));
   }, [data, links]);
 
   const add_link = (
@@ -34,7 +40,11 @@ const MyLinks = () => {
             {links?.map((items: any, index) => {
               return (
                 <Fragment key={index}>
-                  <DisplayLink name={items?.name} url={items?.url} />
+                  <DisplayLink
+                    name={items?.name}
+                    url={items?.url}
+                    id={items?.id}
+                  />
                 </Fragment>
               );
             })}

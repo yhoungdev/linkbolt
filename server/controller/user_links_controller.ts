@@ -55,6 +55,7 @@ export const save_user_link = async (req: Request, res: Response) => {
 	}
 };
 
+
 //get links from user
 export const get_user_links = async (req: Request, res: Response) => {
 	//@ts-ignore
@@ -81,3 +82,29 @@ export const share_links = async (req: Request, res: Response) => {
 		return res.status(StatusCode.BadRequest).json({ error: error?.message });
 	}
 };
+
+
+//function to transfer 
+
+export const remove_saved_link = async  (req: Request, res: Response) => {
+	const linkId = req.params.id
+	
+	try {
+		const removeLink = await prisma.links.delete({
+			where: {
+				id: linkId
+			}
+		})
+	
+		if(removeLink) {
+		 return res.status(StatusCode.OK).json({
+				message: "Link deleted successfully"
+			})
+		}
+	
+		return res.status(StatusCode.BadRequest).json({error: "Failed to delete link"})
+	} catch (err) {
+		console.log(err, "returned")
+	}
+
+}

@@ -1,0 +1,17 @@
+
+<script>
+    import axios from "axios"
+
+    const getProfile = async () => {
+        const getData = await axios('http://localhost:3000/api/profile', {
+            withCredentials: true
+        })
+        const response = await getData;
+        console.log(response)
+    }
+    getProfile()
+</script>
+
+<div>
+    Loged in successfully
+</div>

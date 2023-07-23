@@ -22,6 +22,7 @@ const ShareLinks = () => {
 
               return (
                 <img
+                  key={index}
                   className="ring-2  ring-primary  h-[45px] w-[45px] rounded-full"
                   src={items}
                   alt="User images"
