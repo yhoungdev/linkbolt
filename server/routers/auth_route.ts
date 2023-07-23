@@ -24,7 +24,7 @@ router.get(
 	"/google/login",
 	passport.authenticate("google", {
 		failureRedirect: "/",
-		successRedirect: "http://localhost:3001/",
+		successRedirect: "/api/profile",
 		failureFlash: true,
 		successFlash: "Successfully logged in!",
 	})

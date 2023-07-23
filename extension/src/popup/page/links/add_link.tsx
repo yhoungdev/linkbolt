@@ -7,6 +7,7 @@ import { add_links_validations } from "../../../validations";
 import { goTo } from "react-chrome-extension-router";
 import MyLinks from "../myLinks";
 import { useState } from "react";
+import { useAuth } from "../../../hooks/useAuth";
 
 const Add_new_link = () => {
   const [loader, setLoader] = useState(false);
@@ -15,25 +16,33 @@ const Add_new_link = () => {
     url: "",
   };
 
+  const { isAuthenticated } = useAuth();
+
   const handlePost = async (value: any) => {
-    setLoader(true);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //@ts-ignore
+    try {
+      setLoader(true);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
 
-    const payload = {
-      userId: "64b1bd1ebfa735f8870f953d",
-      ...value,
-    };
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //@ts-ignore
-    const { response } = await postData({
-      url: "/user/save_link",
-      body: payload,
-    });
+      const payload = {
+        ...value,
+      };
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
+      const { response } = await postData({
+        url: "/user/save_link",
+        body: payload,
+        params: isAuthenticated,
+      });
 
-    if (response?.status === 200) {
-      setTimeout(() => goTo(MyLinks), 1500);
-    } else {
+      if (response?.status === 200) {
+        setTimeout(() => goTo(MyLinks), 1500);
+      } else {
+        setLoader(false);
+      }
+    } catch (err) {
+      return;
+    } finally {
       setLoader(false);
     }
   };

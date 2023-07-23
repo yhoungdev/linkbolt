@@ -10,10 +10,10 @@ const Button: FC<IButton> = ({ children, onClick, type, bg, loading }) => {
         backgroundColor: type === "submit" ? "#F46412" : "#F46412",
       }}
       className={`${
-        bg || "bg-primary"
+        bg ? bg : "bg-primary"
       } py-2.5 font-bold  text-white w-full my-[8px]`}
     >
-      {loading ? "Loading..." : <>{children}</>}
+      {loading ? "Please Wait..." : <>{children}</>}
     </button>
   );
 };

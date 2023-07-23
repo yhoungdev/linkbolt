@@ -1,12 +1,41 @@
 ---
 import GoogleButton from 'react-google-button'
+import Cookies from 'js-cookie'
 
 ---
 <script>
+  
+    import Cookies from 'js-cookie'
+import { useEffect } from 'react';
+    interface ExtensionResponse {
+    success: boolean;
+    message: string;
+  }
+  
+  declare namespace chrome.runtime {
+    function sendMessage(extensionId: string, message: any, responseCallback?: (response: ExtensionResponse) => void): void;
+  }
+  
+
+
+//@ts-ignore
+const sendTokenToChromeExtension = ({ extensionId, jwt}) => {
+  chrome.runtime.sendMessage(extensionId, { jwt }, response => {
+    if (!response.success) {
+      console.log('error sending message', response);
+      return response;
+    }
+    console.log('Sucesss ::: ', response.message)
+  });
+}
+
+  
     
-    const getAuth = async () => {
+  const getAuth = async () => {
         window.open('http://localhost:3000/api/auth/google', "_blank")
     }
+
+   
 
     const button = document.querySelector('.google-button'); 
     button?.addEventListener('click' , getAuth)

@@ -13,13 +13,11 @@ export const tabNavigations = [
   //   paths: IndexPage,
   // },
   {
-    id: 2,
     name: "Links",
     icon: <PiLinkSimpleHorizontalBold />,
     paths: MyLinks,
   },
   {
-    id: 3,
     name: "Message",
     icon: <TbMessage2Bolt />,
     paths: Message,

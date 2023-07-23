@@ -59,14 +59,12 @@ passport.deserializeUser((serializedUser: any, done: any) => {
 	}
 });
 
-
 app.use("/api", auth_router);
 app.use("/api", user_actions_route);
 app.use("/api", profile_router);
 
 app.get("/", (req, res) => {
 	res.send(`viewing on port ${PORT}`);
-	
 });
 
 app.get("/google/failed", (req, res) => {

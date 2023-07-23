@@ -5,11 +5,11 @@ import IndexPage from "../../../page";
 import { BiHomeSmile } from "react-icons/bi";
 const DashboardTabs = () => {
   return (
-    <div className="flex justify-between text-center items-center ">
+    <div className="flex items-center justify-between text-center ">
       <Link component={IndexPage}>
         <div
           onClick={() => goTo(IndexPage)}
-          className="flex cursor-pointer  flex-col items-center hover:text-primary"
+          className="flex flex-col items-center cursor-pointer hover:text-primary"
         >
           <h3>
             <BiHomeSmile />
@@ -17,12 +17,12 @@ const DashboardTabs = () => {
           <h3>Home</h3>
         </div>
       </Link>
-      {tabNavigations.map(({ id, icon, name, paths }) => {
+      {tabNavigations.map(({ icon, name, paths }, index) => {
         return (
-          <Fragment key={id}>
+          <Fragment key={index}>
             <div
               onClick={() => goTo(paths)}
-              className="flex cursor-pointer  flex-col items-center hover:text-primary"
+              className="flex flex-col items-center cursor-pointer hover:text-primary"
             >
               <h3>{icon}</h3>
               <h3>{name}</h3>
