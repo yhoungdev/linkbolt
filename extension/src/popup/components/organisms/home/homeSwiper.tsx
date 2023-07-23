@@ -36,7 +36,17 @@ const HomeSwiper = () => {
     </div>
   );
 
-  const slides = [devices, messages, share];
+  const linkBucket = (
+    <div className="text-center">
+      <h1 className="my-4 text-3xl">🪣</h1>
+      <h3 className="text-2xl font-bold text-center ">
+        Create
+        <span className="_mixed_text"> link Bucket </span> and share with others
+      </h3>
+    </div>
+  );
+
+  const slides = [devices, messages, share, linkBucket];
   return (
     <>
       <Swiper

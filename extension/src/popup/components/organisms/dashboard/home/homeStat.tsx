@@ -14,7 +14,7 @@ const HomeStat = () => {
       count: formatNumber(0),
     },
     {
-      title: "Share Links",
+      title: "Shared Links",
       count: formatNumber(0),
     },
   ];

@@ -16,8 +16,6 @@ const Onboard = () => {
     //@ts-ignore
     chrome.tabs.create({
       url: url,
-      width: 400,
-      height: 600,
     });
   };
 

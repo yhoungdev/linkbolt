@@ -19,24 +19,30 @@ const Add_new_link = () => {
   const { isAuthenticated } = useAuth();
 
   const handlePost = async (value: any) => {
-    setLoader(true);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //@ts-ignore
+    try {
+      setLoader(true);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
 
-    const payload = {
-      ...value,
-    };
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //@ts-ignore
-    const { response } = await postData({
-      url: "/user/save_link",
-      body: payload,
-      params: isAuthenticated,
-    });
+      const payload = {
+        ...value,
+      };
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
+      const { response } = await postData({
+        url: "/user/save_link",
+        body: payload,
+        params: isAuthenticated,
+      });
 
-    if (response?.status === 200) {
-      setTimeout(() => goTo(MyLinks), 1500);
-    } else {
+      if (response?.status === 200) {
+        setTimeout(() => goTo(MyLinks), 1500);
+      } else {
+        setLoader(false);
+      }
+    } catch (err) {
+      return;
+    } finally {
       setLoader(false);
     }
   };

@@ -1,6 +1,7 @@
 import Index from "../../../page";
+import Profile from "../../../page/profile/profile";
 import Logo from "../../atoms/logo";
-import { Link } from "react-chrome-extension-router";
+import { Link, goTo } from "react-chrome-extension-router";
 import { useSelector } from "react-redux";
 
 const DashboardHeader = () => {
@@ -17,8 +18,9 @@ const DashboardHeader = () => {
       </Link>
 
       <div
-        className="bg-secondary ring-1  ring-primary h-[50px] w-[50px] rounded-full "
+        className="bg-secondary ring-1 cursor-pointer  ring-primary h-[50px] w-[50px] rounded-full "
         style={styles}
+        onClick={() => goTo(Profile)}
       ></div>
     </div>
   );

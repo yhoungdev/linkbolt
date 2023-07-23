@@ -28,7 +28,7 @@ model Links {
   url       String
   name      String?
   User      User?    @relation(fields: [userId], references: [id])
-  createdAt DateTime @default(now())
+  createdAt DateTime @default(now()) @db.Timestamp
   updatedAt DateTime @updatedAt
   userId    String?  @db.ObjectId
 }
