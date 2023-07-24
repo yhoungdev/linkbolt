@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Onboard = () => {
-  const url = "http://localhost:3000/api/auth/google";
+  const url = "https://linkbolt.up.railway.app/api/auth/google";
   const [userData, setUserData] = useState(null);
   const [isError, setError] = useState();
 
