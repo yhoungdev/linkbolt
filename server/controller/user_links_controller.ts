@@ -27,6 +27,7 @@ export const save_user_link = async (req: Request, res: Response) => {
 		const linkExisted = await prisma.links.findFirst({
 			where: {
 				url: body?.url,
+				id: userId
 			},
 		});
 
