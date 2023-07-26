@@ -13,20 +13,20 @@ function logAuthToken(cookie) {
 }
 
 chrome.cookies.get(
-  { url: "http://localhost:3000/*", name: "auth_cookie" },
+  { url: "https://linkbolt.up.railway.app/*", name: "auth_cookie" },
   function (cookie) {
     logAuthToken(cookie);
   },
 );
 
 chrome.permissions.contains(
-  { origins: ["http://localhost:3000/*"] },
+  { origins: ["https://linkbolt.up.railway.app/*"] },
   function (result) {
     if (result) {
-      console.log("Extension has permission to access http://localhost:3000");
+      console.log("Extension has permission to access https://linkbolt.up.railway.app");
     } else {
       console.log(
-        "Extension does not have permission for http://localhost:3000",
+        "Extension does not have permission for https://linkbolt.up.railway.app",
       );
     }
   },

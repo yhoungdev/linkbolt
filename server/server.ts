@@ -71,6 +71,8 @@ app.get("/google/failed", (req, res) => {
 	res.status(StatusCode.Forbidden).json({ error: " Authentication Failed" });
 });
 
+
+
 process.env.DEBUG = "passport:* node server.js";
 
 app.listen(PORT, () => {});

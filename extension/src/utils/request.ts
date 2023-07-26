@@ -11,7 +11,7 @@ interface IRequest {
 
 
 
-export const defaultUrl = "http://localhost:3000/api";
+export const defaultUrl = "https://linkbolt.up.railway.app/api";
 
 // const headers = {
 //   authourization: `Bearer ${isAuthenticated}`

@@ -15,7 +15,7 @@ const MyLinks = () => {
   const { isAuthenticated } = useAuth();
   const dispatch = useDispatch();
 
-  const { isDeleteId } = useSelector((state) => state?.links);
+  const { isDeleteId } = useSelector((state: any) => state?.links);
 
   const goToLink = () => goTo(Add_new_link);
   const { data } = useFetch("/user/links", isAuthenticated);
