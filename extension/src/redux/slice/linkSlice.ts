@@ -5,7 +5,7 @@ const linkSlice = createSlice({
   initialState: {
     user_links: [],
     user_total_links: 0,
-    isDeleteId: {}
+    isDeleteId: {},
   },
   reducers: {
     updateUserLink: (state: any, action) => {
@@ -22,4 +22,5 @@ const linkSlice = createSlice({
 });
 
 export const linkReducer = linkSlice.reducer;
-export const { updateUserLink, updateUserTotalLinks , updateDelete } = linkSlice.actions;
+export const { updateUserLink, updateUserTotalLinks, updateDelete } =
+  linkSlice.actions;

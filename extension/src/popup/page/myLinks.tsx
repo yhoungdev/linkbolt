@@ -9,6 +9,7 @@ import { useAuth } from "../../hooks/useAuth";
 import { useDispatch, useSelector } from "react-redux";
 import { updateUserTotalLinks } from "../../redux/slice/linkSlice";
 import Bucket from "./links/bucket";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 const MyLinks = () => {
   const [links, setLinks] = useState([]);
@@ -47,18 +48,26 @@ const MyLinks = () => {
           <NullData name="links" />
         ) : (
           <>
-            {links?.map((items: any, index) => {
-              return (
-                <Fragment key={index}>
-                  <DisplayLink
-                    name={items?.name}
-                    url={items?.url}
-                    id={items?.id}
-                    timeStamp={items?.createdAt}
-                  />
-                </Fragment>
-              );
-            })}
+            {links ? (
+              <>
+                {links?.map((items: any, index) => {
+                  return (
+                    <Fragment key={index}>
+                      <DisplayLink
+                        name={items?.name}
+                        url={items?.url}
+                        id={items?.id}
+                        timeStamp={items?.createdAt}
+                      />
+                    </Fragment>
+                  );
+                })}
+              </>
+            ) : (
+              <SkeletonTheme baseColor="#202020" highlightColor="#444">
+                <Skeleton height={70} />
+              </SkeletonTheme>
+            )}
           </>
         )}
       </div>

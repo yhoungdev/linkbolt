@@ -1,18 +1,15 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-nocheck
 import Index from "../../../page";
 import Profile from "../../../page/profile/profile";
 import Logo from "../../atoms/logo";
 import { Link, goTo } from "react-chrome-extension-router";
 import { useSelector } from "react-redux";
-import { useState } from "react";
-
 import {
   NotificationBell,
   PopoverNotificationCenter,
   useNotificationCenter,
   useNotifications,
 } from "@novu/notification-center";
+import Skeleton from "react-loading-skeleton";
 
 const DashboardHeader = () => {
   const { profileData } = useSelector((state: any) => state.profile);
@@ -42,11 +39,16 @@ const DashboardHeader = () => {
           </PopoverNotificationCenter>
         ) : null}
 
-        <div
-          className="bg-secondary ring-1 cursor-pointer  ring-primary h-[50px] w-[50px] rounded-full "
-          style={styles}
-          onClick={() => goTo(Profile)}
-        ></div>
+        <div onClick={() => goTo(Profile)}>
+          {!profileData?.picture ? (
+            <Skeleton circle={true} height={50} width={50} />
+          ) : (
+            <div
+              className="bg-secondary relative ring-1 cursor-pointer  ring-primary h-[50px] w-[50px] rounded-full "
+              style={styles}
+            ></div>
+          )}
+        </div>
       </div>
     </div>
   );

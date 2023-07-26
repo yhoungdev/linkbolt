@@ -1,6 +1,7 @@
-import { Link } from "react-chrome-extension-router";
+import { Link, goTo } from "react-chrome-extension-router";
 import { PiCaretRightBold } from "react-icons/pi";
 import ShareWith from "../../../../page/ShareLink";
+
 const ShareLinks = () => {
   const images = [
     "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&amp;fit=facearea&amp;facepad=2&amp;w=48&amp;h=48&amp;q=80",
@@ -9,7 +10,10 @@ const ShareLinks = () => {
     "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=facearea&facepad=2&w=48&h=48&q=80",
   ];
   return (
-    <div className="p-3 my-3 cursor-pointer bg-night rounded-xl hover:bg-secondary">
+    <div
+      className="p-3 my-3 cursor-pointer bg-night rounded-xl hover:bg-secondary"
+      onClick={() => goTo(ShareWith)}
+    >
       <div className="flex items-center justify-between">
         <h4 className="my-3 text-lg font-bold ">Tap to share links</h4>
         <p className="text-primary">Coming Soon</p>

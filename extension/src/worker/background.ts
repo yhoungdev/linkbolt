@@ -13,20 +13,22 @@ function logAuthToken(cookie) {
 }
 
 chrome.cookies.get(
-  { url: "https://linkbolt.up.railway.app/*", name: "auth_cookie" },
+  { url: "https://linkbolt.onrender.com/*", name: "auth_cookie" },
   function (cookie) {
     logAuthToken(cookie);
   },
 );
 
 chrome.permissions.contains(
-  { origins: ["https://linkbolt.up.railway.app/*"] },
+  { origins: ["https://linkbolt.onrender.com/*"] },
   function (result) {
     if (result) {
-      console.log("Extension has permission to access https://linkbolt.up.railway.app");
+      console.log(
+        "Extension has permission to access https://linkbolt.onrender.com",
+      );
     } else {
       console.log(
-        "Extension does not have permission for https://linkbolt.up.railway.app",
+        "Extension does not have permission for https://linkbolt.onrender.com",
       );
     }
   },

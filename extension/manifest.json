@@ -2,6 +2,7 @@
   "name": "Linkbolt",
   "manifest_version": 3,
   "version": "0.0.1",
+  "description": "Seamless Link Sharing Connecting Devices, Unify Your Links, Everywhere.", 
   "action": {
     "default_popup": "index.html"
   },
@@ -10,8 +11,17 @@
     "type": "module"
   },
   "permissions": ["cookies", "tabs", "storage"],
-  "host_permissions": ["http://localhost:3001/*", "https://linkbolt.up.railway.app/*"],
-  "icons": {
-    "128": "128.png"
+  "host_permissions": [
+    "https://linkbolt.up.railway.app/*",
+    "http://linkbolt.up.railway.app/*",
+    "https://linkbolt.onrender.com/*",
+    "http://linkbolt.onrender.com/*"
+
+  ],
+  "icons": { 
+    "128": "src/assets/icons/128.png"
+  },
+  "author": {
+    "email": "yhoungdev@gmail.com"
   }
 }
