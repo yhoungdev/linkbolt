@@ -15,13 +15,15 @@ const DeleteLink = () => {
   //@ts-ignore
   const { isDeleteId } = useSelector((state) => state?.links);
   const [loader, setLoader] = useState(false);
+
   const removeLink = async () => {
     try {
       setLoader(true);
-      await deleteData(`/user/delete/link/${isDeleteId?.id}`, isAuthenticated);
+      await deleteData(`/user/delete/link/${isDeleteId?._id}`, isAuthenticated);
       setTimeout(() => goTo(MyLinks), 1000);
     } catch (err) {
       console.log(err);
+      setLoader(false);
     } finally {
       setLoader(false);
     }
@@ -35,9 +37,12 @@ const DeleteLink = () => {
           {isDeleteId?.name} will be deleted ?
         </p>
         <div className="flex w-full gap-3">
-          <Button onClick={goBack} bg={"bg-secondary"}>
+          <button
+            onClick={goBack}
+            className="py-2.5 font-bold bg-secondary  text-white w-full my-[8px] "
+          >
             Cancel
-          </Button>
+          </button>
           <Button onClick={removeLink} loading={loader}>
             Continue
           </Button>

@@ -9,10 +9,8 @@ interface IRequest {
   params?: any;
 }
 
-
-
-export const defaultUrl = "https://linkbolt.up.railway.app/api";
-
+// export const defaultUrl = "https://linkbolt.onrender.com/api";
+export const defaultUrl = "https://linkbolt.onrender.com/api";
 // const headers = {
 //   authourization: `Bearer ${isAuthenticated}`
 // }
@@ -59,22 +57,20 @@ export const useFetch = (url: string, params?: any) => {
   return { data, error };
 };
 
-
-//function to delete 
-export const deleteData = async (url: string ,  params: any  ) => {
+//function to delete
+export const deleteData = async (url: string, params: any) => {
   try {
-    const deleteItem = await axios.delete(`${defaultUrl}${url}` , {
+    const deleteItem = await axios.delete(`${defaultUrl}${url}`, {
       headers: {
         Authorization: `Bearer ${params}`,
       },
-    })
+    });
 
     const data = await deleteItem;
-    if(data.status === 200) {
-      cogoToast.success("Successfully deleted")
-    } 
-
-  } catch ( err ) {
-    cogoToast.error("Error deleting link")
+    if (data.status === 200) {
+      cogoToast.success("Successfully deleted");
+    }
+  } catch (err) {
+    cogoToast.error("Error deleting link");
   }
-}
+};

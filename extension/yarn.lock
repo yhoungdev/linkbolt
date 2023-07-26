@@ -1721,6 +1721,11 @@ clsx@1.1.1:
   resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
   integrity sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
 
+clsx@^1.1.0:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.2.1.tgz#0ddc4a20a549b59c93a4116bb26f5294ca17dc12"
+  integrity sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==
+
 cmd-shim@^6.0.0:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/cmd-shim/-/cmd-shim-6.0.1.tgz#a65878080548e1dca760b3aea1e21ed05194da9d"
@@ -3788,6 +3793,11 @@ react-chrome-extension-router@^1.4.0:
   resolved "https://registry.yarnpkg.com/react-chrome-extension-router/-/react-chrome-extension-router-1.4.0.tgz#27db29edf9e23fa7d37cd4ecb57955da0f3b0ec4"
   integrity sha512-ngf7DMVGIcr0w8Fp3Eo6nufi3L1mQqLz1xLfvzD1YBPI8zLSKAS9PP3pUS+vp7oeE62ZKxcFJiUC6OFKuBQ6Cg==
 
+react-content-loader@^6.2.1:
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/react-content-loader/-/react-content-loader-6.2.1.tgz#8feb733c2d2495002e1b216f13707f2b5f2a8ead"
+  integrity sha512-6ONbFX+Hi3SHuP66JB8CPvJn372pj+qwltJV0J8z/8MFrq98I1cbFdZuhDWeQXu3CFxiiDTXJn7DFxx2ZvrO7g==
+
 react-dom@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
@@ -3830,6 +3840,11 @@ react-is@^18.0.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
+react-loading-skeleton@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/react-loading-skeleton/-/react-loading-skeleton-3.3.1.tgz#cd6e3a626ee86c76a46c14e2379243f2f8834e1b"
+  integrity sha512-NilqqwMh2v9omN7LteiDloEVpFyMIa0VGqF+ukqp0ncVlYu1sKYbYGX9JEl+GtOT9TKsh04zCHAbavnQ2USldA==
+
 react-redux@^8.1.1:
   version "8.1.1"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-8.1.1.tgz#8e740f3fd864a4cd0de5ba9cdc8ad39cc9e7c81a"
@@ -3851,6 +3866,14 @@ react-refresh@^0.14.0:
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.14.0.tgz#4e02825378a5f227079554d4284889354e5f553e"
   integrity sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==
+
+react-shimmer@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-shimmer/-/react-shimmer-3.2.0.tgz#f25e48dc3276822b2ed46a23c3c1c7e4bfd952f8"
+  integrity sha512-sLUYOulTt4Pf8/ezwRaDdVblEyrD0zkJEH1OsFvgNZbc0n5FTQa8anBrtAoCFCQthOOWgFmD89RPVeILyM9WjQ==
+  dependencies:
+    clsx "^1.1.0"
+    prop-types "^15.7.2"
 
 react-textarea-autosize@8.3.4:
   version "8.3.4"

@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import { updateProfileState } from "../redux/slice/userProfileSlice";
 
 export const getProfile = async () => {
-
   const dispatch = useDispatch();
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   //@ts-ignore

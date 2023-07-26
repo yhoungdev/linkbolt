@@ -3,11 +3,13 @@ import Input from "../components/atoms/inputs/input";
 import Button from "../components/atoms/button";
 import { Link } from "react-chrome-extension-router";
 import IdentifyUser from "./identifyUser";
+import NullData from "../components/atoms/nullData";
 const ShareWith = () => {
   return (
     <DashboardLayout>
       <div>
-        <form>
+        <NullData content="This feature is coming soon" />
+        {/* <form>
           <Input
             type={"email"}
             label="Receiver's Email"
@@ -23,7 +25,7 @@ const ShareWith = () => {
           <Link component={IdentifyUser}>
             <Button>Continue</Button>
           </Link>
-        </form>
+        </form> */}
       </div>
     </DashboardLayout>
   );

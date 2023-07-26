@@ -5,6 +5,8 @@ import { Router } from "react-chrome-extension-router";
 import { Provider } from "react-redux";
 import { store } from "./redux/store.ts";
 import { NovuProvider } from "@novu/notification-center";
+import "react-loading-skeleton/dist/skeleton.css";
+import { SkeletonTheme } from "react-loading-skeleton";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
@@ -17,7 +19,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
             fetchUserPreferences: true,
           }}
         >
-          <App />
+          <SkeletonTheme baseColor="#202020" highlightColor="#444">
+            <App />
+          </SkeletonTheme>
         </NovuProvider>
       </Router>
     </Provider>
