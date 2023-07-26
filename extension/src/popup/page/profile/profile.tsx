@@ -36,7 +36,7 @@ const Profile = () => {
           <div className="my-[1em] leading-[1.5em]">
             <h3 className="font-semibold text-center">{profileData?.name}</h3>
 
-            <h5>{profileData?.email}</h5>
+            <h5>{profileData?.email || "loading email"}</h5>
 
             <div
               className="flex items-center justify-center gap-2 font-bold text-red-600 cursor-pointer"
