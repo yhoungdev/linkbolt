@@ -36,14 +36,27 @@
   </style>
 </head>
 <body>
-  <h1>You have successfully logged in!</h1>
-  <h2>Close this tab with the icon button</h2>
 
-  <span class="close-icon" onclick="closeTab()">&#10005;</span>
+  <center>
+    <div>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-5 -5 60.00 60.00" xml:space="preserve" width="213px" height="213px" fill="#000000" transform="rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle style="fill:#25AE88;" cx="25" cy="25" r="25"></circle> <polyline style="fill:none;stroke:#FFFFFF;stroke-width:3.05;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points=" 38,15 22,33 12,25 "></polyline> </g></svg>
+      </div>
+  </center>
+  <h1>You have successfully logged in!</h1>
+  <h2>Close this page and goback to the extension</h2>
+
+  
 
   <script>
+
+    const redirect = () =>location.href="/index.html"
+
     function closeTab() {
       window.close();
+      setTimeout(() => {
+        window.close()
+      }, 1500)
+      
     }
   </script>
 </body>

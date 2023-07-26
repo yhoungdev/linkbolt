@@ -6,8 +6,10 @@ import { useSelector } from "react-redux";
 
 const DashboardHeader = () => {
   const { profileData } = useSelector((state: any) => state.profile);
+  const defaultImage =
+    "https://res.cloudinary.com/dhdqt4xwu/image/upload/v1690355786/linkSync/mfnwzadauofmatsqxjsl.svg";
   const styles = {
-    backgroundImage: `url(${profileData?.picture})`,
+    backgroundImage: `url(${profileData?.picture || defaultImage})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
   };

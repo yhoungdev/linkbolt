@@ -1,5 +1,4 @@
 import DashboardLayout from "../../../layout/dashboardLayout";
-import NullData from "../../components/atoms/nullData";
 
 const Bucket = () => {
   return (
