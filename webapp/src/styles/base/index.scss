@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+._mixed_text {
+  background: linear-gradient(to right, #f46412, #f14163, #7909b0);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

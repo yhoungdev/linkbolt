@@ -15,7 +15,7 @@ const Onboard = () => {
   const openNewTab = () => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     //@ts-ignore
-    chrome.tabs.create({
+    chrome.windows.create({
       url: url,
     });
   };
