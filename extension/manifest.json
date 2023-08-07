@@ -10,10 +10,8 @@
     "service_worker": "src/worker/background.ts",
     "type": "module"
   },
-  "permissions": ["cookies", "tabs", "storage"],
+  "permissions": ["cookies", "storage"],
   "host_permissions": [
-    "https://linkbolt.up.railway.app/*",
-    "http://linkbolt.up.railway.app/*",
     "https://linkbolt.onrender.com/*",
     "http://linkbolt.onrender.com/*"
 
